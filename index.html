@@ -1,159 +1,114 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
-  <title>Bootstrap Demo</title>
-
-  <!-- Bring in our bootstrap stylesheet -->
+  <title>WebDashboard</title>
+  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">Latitude</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-  <!-- Our rows function in containers (grid created). -->
-  <div class="container">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+<!--        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>-->
 
-    <!-- Our columns function in rows. -->
-    <div class="row">
-
-      <!-- Columns have 12 areas of width to work with. -->
-
-      <!-- One third of screen (4/12) -->
-      <div class="col-md-4">
-        <!-- This is column 1 of 3 -->
-      </div>
-
-      <!-- One third of screen (4/12) -->
-      <div class="col-md-4">
-        <!-- This is column 2 of 3 -->
-      </div>
-
-      <!-- One third of screen (4/12) -->
-      <div class="col-md-4">
-
-        <!-- This is column 3 of 3 -->
-      </div>
-
-      <!-- Columns float left, so all adjacent rows will appear next to each other (as long as not all space gets taken up) -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="page_vis_1.html">Temperature</a>
+			<a class="dropdown-item" href="page_vis_2.html">Humidity</a>
+			<a class="dropdown-item" href="page_vis_3.html">Cloudiness</a>
+			<a class="dropdown-item" href="page_vis_4.html">Wind Speed</a>
+<!--        <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>-->
+          </div>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="page_comparison.html">Comparison</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="page_data.html">Data</a>
+        </li>
+		
+<!--        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>-->
     </div>
+  </nav>
 
-  </div>
+<!--
+<div class="row">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-md-4">.col-md-4</div>
+      </div> -->
 
 
-  <!-- Creates the Overall Grid -->
-  <div class="container">
 
-    <!-- First Row -->
-    <div class="row">
+<div class="container">
+	<div class="row">
+        <div class="col-md-8">
+		  <div class="container">
+			<div class="jumbotron">
+			  <h1 class="display-8">Summary: Latitude vs. X</h1>
+			  
+			  <div class="col-md-2">
+			  <img src="Lat_vs_Temp.png" class="pull-left" alt="Latitude vs. Temperature" class="img-thumbnail">
+			  </div>
+		  
 
-      <!-- First (and only column) -->
-      <div class="col-md-12">
-        <h1>I'm a size 12 column. I am the only column on my row. I stretch the entire width. And keep going.</h1>
-      </div>
-    </div>
+			  <p>The purpose of this project was to analyze how weather changes as you get closer to the equator.  To accomplish this analysis, we first pulled data from the OpenWeatherMap API to assemble a dataset on over 500 cities.</p>
 
-    <!-- Second Row -->
-    <div class="row">
+			  <p>After assembling the dtatset, we used Matplotlib to plot various aspects of the weather vs. latitude.  Factors we looked at included: temperature, cloudiness, wind speed, and humidity.  This site provides the source data and visualizations created as part of the analysis, as well as explanations and descriptions of any trends and correlations witnessed.</p>
 
-      <!-- First of two columns -->
-      <div class="col-md-6">
-        <h1>I'm a size 6 column. I take up half a 12 column row</h1>
-      </div>
+			</div>
+		  </div>
+		 </div>
+        
+        <div class="col-md-4">
+		<h3 class="text-center">Visualization</h3>	
+			<div class="row">
+				<div class="col-sm-2">
 
-      <!-- Second of two columns -->
-      <div class="col-md-6">
-        <h1>I'm a size 6 column. I take up half a 12 column row</h1>
-      </div>
-    </div>
+						<a href="page_vis_1.html" title=""><img src="Lat_vs_Temp.png" alt="Latitude vs. Temperature" style="width: auto; height: 150px;">
 
-    <!--Third Row-->
-    <div class="row">
-      <!--First of Two Columns-->
-      <div class="col-md-8">
-        <h1>Columns don't need to be the same size. I'm a size 8 column.</h1>
-      </div>
-      <!--Second of Two Columns-->
-      <div class="col-md-4">
-        <h1>They just need to fill 12 columns or less per row. I'm a 4 column.</h1>
-      </div>
-    </div>
+					  <a href="page_vis_2.html" title=""><img src="Lat_vs_Humidity.png" alt="Latitude vs. Humidity" style="width: auto; height: 150px;">
+				</div>
 
-    <!--Fourth Row-->
-    <div class="row">
-      <!--First and Only Column in this Row-->
-      <div class="col-md-6">
-        <h1>We can leave part of a row blank, by just not filling it up. I'm a size 6 column</h1>
-      </div>
-    </div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2">
 
-    <!--Fifth Row-->
-    <div class="row justify-content-end">
-      <!--First and Only Column in this Row-->
-      <!--Notice how horizontally aligned this column to the right-->
-      <div class="col-md-6">
-        <h1>We can also offset a column if we want. I'm a size 6 column, justified to the end of the row</h1>
-      </div>
-    </div>
 
-    <!--Sixth Row-->
-    <div class="row">
-      <!--First and Only Column in this Row-->
-      <div class="col-md-12">
-        <h1>The important things to remember are these:</h1>
-        <h3>1. Columns go inside rows. <small>container &gt; row &gt; column</small></h3>
-        <h3>2. Only 12 columns or less per row.</h3>
-        <h3>3. Rows go inside containers.</h3>
-        <h3>4. Don't try and change the grid.</h3>
-      </div>
-    </div>
+						<a href="page_vis_3.html" title=""><img src="Lat_vs_Cloudiness.png" alt="Latitude vs. Cloudiness" style="width: auto; height: 150px;">
 
-    <!--Seventh Row-->
-    <div class="row">
-      <!--First Column in this Row-->
-      <div class="col-md-6">
-        <div class="box">
-          <h1>If you want to change an element inside the grid, then add CSS to the element inside the grid. Not the grid itself.</h1>
-        </div>
-      </div>
+					  <a href="page_vis_4.html" title=""><img src="Lat_vs_WindSpeed.png" alt="Latitude vs Wind Speed" style="width: auto; height: 150px;">
 
-      <!--Second Column in this Row-->
-      <div class="col-md-6">
-        <div class="box">
-          <h1>Adding CSS directly to the grid will probably break things elsewhere, as that isn't the intended usage.</h1>
-        </div>
-      </div>
-    </div>
-
-    <!--Eighth Row-->
-    <div class="row">
-      <div class="alert alert-primary" role="alert">
-        I am a component that doesn't have a column
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col">
-        <div class="alert alert-primary" role="alert">
-          I am a component that will take up a full column.
-        </div>
-    </div>
-
-    </div>
-
-    <!--Ninth Row-->
-    <div class="row">
-      <!--First and Only Column in this Row-->
-      <div class="col-md-12">
-        <h1>Using Bootstrap doesn't mean we're never writing CSS again.</h1>
-        <h1>But we can build websites much faster without having to write <strong><i>ALL</i></strong> of the CSS ourselves.</h1>
-      </div>
-    </div>
-
-  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 </body>
 
